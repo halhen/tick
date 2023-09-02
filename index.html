@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tick, tack</title>
+    <style>
+      body {
+        background-color: black;
+        color: #da46a7;
+        font-size: 5em;
+        font-family: arial;
+      }
+
+      div {
+        margin:auto;
+        text-align: center;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div>
+      <p id="tick"></p>
+      <img src="" id="gif"></img>
+    </div>
+  </body>
+
+  <script>
+    const target = new Date(2023, 12, 29, 6, 0);
+
+    const gifs = [
+      "https://media.giphy.com/media/hXJ1MWMzY7Af32UIUD/giphy.gif",
+      "https://media.giphy.com/media/UOY1vmIpQO2jQyYzGw/giphy.gif",
+      "https://media.giphy.com/media/d80SdOeWNm3GE/giphy.gif",
+      "https://media.giphy.com/media/dKdtyye7l5f44/giphy.gif",
+      "https://media.giphy.com/media/3o85xyPx3kXzeIAf6M/giphy.gif",
+      "https://media.giphy.com/media/Btn42lfKKrOzS/giphy.gif",
+      "https://media.giphy.com/media/oQBGUspHX6JNe/giphy.gif",
+      "https://media.giphy.com/media/xTiTnkt1IjaaTWoPny/giphy.gif",
+      "https://media.giphy.com/media/7kn27lnYSAE9O/giphy.gif",
+      "https://media.giphy.com/media/8K32zXBZpcouc/giphy.gif",
+      "https://media.giphy.com/media/oZmk8DX9H0foA/giphy.gif",
+      "https://media.giphy.com/media/SWzdM8vnn1gYceWWKp/giphy.gif",
+      "https://media.giphy.com/media/M9tpu3TPG42n6/giphy.gif",
+      "https://media.giphy.com/media/3osxYrgM8gi9CDjcPu/giphy.gif",
+      "https://media.giphy.com/media/X0bnTmo4izNfi/giphy-downsized-large.gif",
+      "https://media.giphy.com/media/UrXTGJE68Oumn5v7t5/giphy.gif",
+      "https://media.giphy.com/media/j0QzDgFZRX2njRxxtP/giphy-downsized-large.gif",
+      "https://media.giphy.com/media/l3q2NzqDoCzvoYBAQ/giphy.gif"
+    ]
+
+    let current_gif = Math.floor(Math.random()*gifs.length);
+
+    function tick() {
+      const el = document.getElementById("tick")
+      el.innerHTML = output();
+      window.setTimeout(tick, 1000);
+    }
+
+    function tick_gif() {
+      current_gif = (current_gif + 1) % gifs.length;
+      const el = document.getElementById("gif")
+      gif.setAttribute("src", gifs[current_gif])
+
+      window.setTimeout(tick_gif, 5000)
+    }
+
+    function n(n){
+      return n > 9 ? "" + n: "0" + n;
+    }
+
+    function output() {
+      let seconds = Math.floor((target - Date.now()) / 1000);
+      if (seconds < 0) {
+        return "Wohooo"
+      } else {
+        const days = Math.floor(seconds / (60 * 60 * 24)); seconds -= days * (60 * 60 * 24);
+        const hours = Math.floor(seconds / (60 * 60)); seconds -= hours * (60 * 60);
+        const minutes = Math.floor(seconds / (60)); seconds -= minutes * (60);
+        return `${days} DAGAR ${n(hours)}:${n(minutes)}:${n(seconds)}`
+      }
+    }
+
+    tick();
+    tick_gif();
+  </script>
+</html>
