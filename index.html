@@ -25,28 +25,20 @@
   </body>
 
   <script>
-    const target = new Date(2023, 12, 29, 6, 0);
+    const target = new Date(2024, 06, 14, 20, 45);
 
     const gifs = [
-      "https://media.giphy.com/media/hXJ1MWMzY7Af32UIUD/giphy.gif",
-      "https://media.giphy.com/media/UOY1vmIpQO2jQyYzGw/giphy.gif",
-      "https://media.giphy.com/media/d80SdOeWNm3GE/giphy.gif",
-      "https://media.giphy.com/media/dKdtyye7l5f44/giphy.gif",
-      "https://media.giphy.com/media/3o85xyPx3kXzeIAf6M/giphy.gif",
-      "https://media.giphy.com/media/Btn42lfKKrOzS/giphy.gif",
-      "https://media.giphy.com/media/oQBGUspHX6JNe/giphy.gif",
-      "https://media.giphy.com/media/xTiTnkt1IjaaTWoPny/giphy.gif",
-      "https://media.giphy.com/media/7kn27lnYSAE9O/giphy.gif",
-      "https://media.giphy.com/media/8K32zXBZpcouc/giphy.gif",
-      "https://media.giphy.com/media/oZmk8DX9H0foA/giphy.gif",
-      "https://media.giphy.com/media/SWzdM8vnn1gYceWWKp/giphy.gif",
-      "https://media.giphy.com/media/M9tpu3TPG42n6/giphy.gif",
-      "https://media.giphy.com/media/3osxYrgM8gi9CDjcPu/giphy.gif",
-      "https://media.giphy.com/media/X0bnTmo4izNfi/giphy-downsized-large.gif",
-      "https://media.giphy.com/media/UrXTGJE68Oumn5v7t5/giphy.gif",
-      "https://media.giphy.com/media/j0QzDgFZRX2njRxxtP/giphy-downsized-large.gif",
-      "https://media.giphy.com/media/l3q2NzqDoCzvoYBAQ/giphy.gif"
+      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXVyMHY4emJkZTM0eXJ1N21pMHVtcWozNWs5MjNnNm9ueGlvNHRwMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fBUYOmOywHnJoIn82O/giphy.gif",
+      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnZjMmdkbm9hZnN4bTBpeXdlMjUzamE4OHR4dXU5eTAzaHBjem5sYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/63mxnzMK0vOec/giphy.gif",
+      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHdqNnYybmNydnAyd2VhbnBvam5wNXZ0NTdxeHMwamphcnhjZGltayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Tl25hw4bD37AQ/giphy-downsized-large.gif",
+      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXJvODZ0dmd2dDFzc3R2YzI1NDI5a3p5dDE4c3RieDU5cDA3emFobCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/y0tiEDis1nohWN7boc/giphy-downsized-large.gif",
+      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWlnMmE4cGFueW9uMTFxa2hzZW9pY253NXQ1YzNuenpvMnpvd3BycyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oeSAYUUxGQLvXklMs/giphy.gif",
+      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXdlbm9xdzB4dDZucnJucjhneTVjZWhwM2x6N3Q0bWFmeTljd3lrMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TLJAIm5tSGlXyIrLSg/giphy.gif",
+      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXR4eXpkdGZoZXl0ejJjcmIxbG53MnMxbGJ1aDc1aXdkd2M0anFnMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ekRqVOvswL4YMN2lEL/giphy-downsized-large.gif",
+      "https://media.giphy.com/media/8IKJxUV6PTQhq/giphy.gif",
+      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnM5Mm5kMjY1dGdmcHZyNHY3MThsMWZ5NmI5endjeWs1OGNhNG94byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26ufbEZ0kdpOKokgM/giphy.gif"
     ]
+    gifs.sort(() => Math.random() - 0.5);
 
     let current_gif = Math.floor(Math.random()*gifs.length);
 
